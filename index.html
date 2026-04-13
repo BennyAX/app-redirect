@@ -34,15 +34,24 @@
   <script>
   var ua = navigator.userAgent;
 
-  setTimeout(function() {
-    if (/Android/i.test(ua)) {
-      window.location.href = "https://play.google.com/store/apps/details?id=au.com.athletexchange.app1";
-    } else if (/iPhone|iPad|iPod/i.test(ua)) {
-      window.location.href = "https://apps.apple.com/app/athletexchange/id6761602466";
-    } else {
-      window.location.href = "https://athletexchange.com.au";
-    }
-  }, 250);
+  // Check if user already tried opening app
+  if (localStorage.getItem("ax_redirected")) {
+    // If yes → send to website
+    window.location.href = "https://athletexchange.com.au";
+  } else {
+    // Mark as redirected
+    localStorage.setItem("ax_redirected", "true");
+
+    setTimeout(function() {
+      if (/Android/i.test(ua)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=au.com.athletexchange.app1";
+      } else if (/iPhone|iPad|iPod/i.test(ua)) {
+        window.location.href = "https://apps.apple.com/app/athletexchange/id6761602466";
+      } else {
+        window.location.href = "https://athletexchange.com.au";
+      }
+    }, 250);
+  }
 </script>
 
 </body>
