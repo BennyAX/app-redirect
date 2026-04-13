@@ -7,5 +7,17 @@
 </head>
 <body>
   <p>Opening AthleteXchange...</p>
+
+  <script>
+    var ua = navigator.userAgent;
+
+    if (/Android/i.test(ua)) {
+      window.location.href = "https://play.google.com/store/apps/details?id=au.com.athletexchange.app1";
+    } else if (/iPhone|iPad|iPod/i.test(ua)) {
+      window.location.href = "https://apps.apple.com/app/athletexchange/id6761602466";
+    } else {
+      window.location.href = "https://athletexchange.com.au";
+    }
+  </script>
 </body>
 </html>
