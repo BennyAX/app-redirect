@@ -21,10 +21,13 @@
   </style>
 </head>
 <body>
-  
-   <img src="https://sharetribe-assets.imgix.net/681852dc-12bd-4cc5-a8c4-cfce1d2b2de5/raw/16/d472d55a91282c8bf9f17510abf92b63b0334a?auto=format&fit=clip&h=72&w=640&s=9580c27f75ecc54eaefd6ccca7cfe562" alt="AthleteXchange Logo" style="width: 160px; margin: 0 auto 20px; display: block;" />
+  <img
+    src="https://sharetribe-assets.imgix.net/681852dc-12bd-4cc5-a8c4-cfce1d2b2de5/raw/16/d472d55a91282c8bf9f17510abf92b63b0334a?auto=format&fit=clip&h=72&w=640&s=9580c27f75ecc54eaefd6ccca7cfe562"
+    alt="AthleteXchange Logo"
+    style="width: 160px; margin: 0 auto 20px; display: block;"
+  />
 
-  <h2>Opening AthleteXchange...</h2>
+  <h2>Opening AthleteXchange App...</h2>
   <p>Alternatively, choose an option below:</p>
 
   <a href="https://apps.apple.com/app/athletexchange/id6761602466">Download on App Store</a>
@@ -32,27 +35,23 @@
   <a href="https://athletexchange.com.au">Continue to Website</a>
 
   <script>
-  var ua = navigator.userAgent;
+    var ua = navigator.userAgent;
 
-  // Check if user already tried opening app
-  if (localStorage.getItem("ax_redirected")) {
-    // If yes → send to website
-    window.location.href = "https://athletexchange.com.au";
-  } else {
-    // Mark as redirected
-    localStorage.setItem("ax_redirected", "true");
+    if (sessionStorage.getItem("ax_redirected")) {
+      window.location.href = "https://athletexchange.com.au";
+    } else {
+      sessionStorage.setItem("ax_redirected", "true");
 
-    setTimeout(function() {
-      if (/Android/i.test(ua)) {
-        window.location.href = "https://play.google.com/store/apps/details?id=au.com.athletexchange.app1";
-      } else if (/iPhone|iPad|iPod/i.test(ua)) {
-        window.location.href = "https://apps.apple.com/app/athletexchange/id6761602466";
-      } else {
-        window.location.href = "https://athletexchange.com.au";
-      }
-    }, 250);
-  }
-</script>
-
+      setTimeout(function() {
+        if (/Android/i.test(ua)) {
+          window.location.href = "https://play.google.com/store/apps/details?id=au.com.athletexchange.app1";
+        } else if (/iPhone|iPad|iPod/i.test(ua)) {
+          window.location.href = "https://apps.apple.com/app/athletexchange/id6761602466";
+        } else {
+          window.location.href = "https://athletexchange.com.au";
+        }
+      }, 250);
+    }
+  </script>
 </body>
 </html>
